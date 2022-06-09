@@ -1,5 +1,6 @@
 import {Navigate, Outlet} from 'react-router-dom';
 import Header from '../components/Header';
+import {LoadingComponent} from '../components/LoadingComponent';
 import Sidebar from '../components/Sidebar';
 import useAuth from '../hooks/useAuth';
 const PrivateLayout = () => {
@@ -8,7 +9,7 @@ const PrivateLayout = () => {
   if (loading) {
     return (
       <>
-        <div>loading...</div>
+        <LoadingComponent />
       </>
     );
   }

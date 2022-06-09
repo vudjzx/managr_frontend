@@ -2,7 +2,7 @@ import {Fragment, useState} from 'react';
 import {Combobox, Dialog, Transition} from '@headlessui/react';
 import useProjects from '../hooks/useProjects';
 
-function classNames(...classes) {
+function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -42,6 +42,8 @@ const SearchModal = () => {
           leaveTo="opacity-0 scale-95">
           <Combobox
             as="div"
+            onChange={() => {}}
+            value={search}
             className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
             <div className="relative">
               <Combobox.Input
@@ -57,7 +59,7 @@ const SearchModal = () => {
                 className="max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray-800">
                 {filteredProjects.map(project => (
                   <Combobox.Option
-                    onClick={() => (window.location = `/projects/${project._id}`)}
+                    onClick={() => (window.location = `/projects/${project._id}` as any)}
                     key={project.id}
                     value={project.id}
                     className={({active}) =>

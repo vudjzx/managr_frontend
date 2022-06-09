@@ -12,6 +12,8 @@ const ProjectForm = (props: {editing?: boolean}) => {
     deadline: '',
     client: '',
     tasks: [],
+    collaborators: [],
+    owner: '',
   });
   const params = useParams();
   useEffect(() => {
@@ -40,6 +42,8 @@ const ProjectForm = (props: {editing?: boolean}) => {
       deadline: '',
       client: '',
       tasks: [],
+      collaborators: [],
+      owner: '',
     });
   };
 
