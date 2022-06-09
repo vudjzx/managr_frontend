@@ -5,6 +5,7 @@ import axiosClient from '../config/axiosClient';
 import CustomAlert from '../components/CustomAlert';
 import useAuth from '../hooks/useAuth';
 import {ILoginRes} from '../interfaces/IAuth';
+import {LoadingComponent} from '../components/LoadingComponent';
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -48,7 +49,7 @@ const Login = () => {
   if (loading) {
     return (
       <>
-        <div>loading...</div>
+        <LoadingComponent />
       </>
     );
   }
