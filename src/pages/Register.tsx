@@ -1,10 +1,8 @@
-import axios from 'axios';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import CustomAlert from '../components/CustomAlert';
 import axiosClient from '../config/axiosClient';
 import {CustomAlertProps} from '../interfaces/CustomAlert';
-import {UserCreatedResponse} from '../interfaces/Responses';
 
 const Register = () => {
   const [name, setName] = useState('');
