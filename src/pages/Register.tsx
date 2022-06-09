@@ -127,7 +127,7 @@ const Register = () => {
 
           <input
             type="submit"
-            className="bg-sky-500 text-white text-xl  p-3 rounded-md mt-5 cursor-pointer hover:bg-sky-800 transition-colors focus:outline-none focus:shadow"
+            className="bg-sky-600 text-white text-xl  p-3 rounded-md mt-5 cursor-pointer hover:bg-sky-800 transition-colors focus:outline-none focus:shadow"
             value="Sign up"
           />
         </div>

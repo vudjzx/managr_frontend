@@ -30,7 +30,7 @@ const ConfirmAccount = () => {
   return (
     <>
       <h1 className="text-sky-600 font-black text-5xl capitalize">
-        Confirm your account on <span className="text-slate-700">Manag-r</span>
+        Confirm your account on <span className="text-slate-700">Managr</span>
       </h1>
       <div className="py-6">{alert.message && <CustomAlert {...alert} />}</div>
       {confirmedAccount && (

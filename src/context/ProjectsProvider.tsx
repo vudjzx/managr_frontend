@@ -17,6 +17,7 @@ import {
 } from '../interfaces/Responses';
 import {io, Socket} from 'socket.io-client';
 import useAuth from '../hooks/useAuth';
+import {useNavigate} from 'react-router-dom';
 
 let socket: Socket;
 
@@ -34,6 +35,7 @@ export const ProjectsProvider: React.FC = ({children}) => {
   const [deleteCollabModal, setDeleteCollabModal] = useState<boolean>(false);
   const [searchModal, setSearchModal] = useState<boolean>(false);
   const {auth} = useAuth();
+  const navigate = useNavigate();
 
   const handleSearchModal = () => {
     setSearchModal(!searchModal);
@@ -48,6 +50,14 @@ export const ProjectsProvider: React.FC = ({children}) => {
     setTimeout(() => {
       setAlert({message: '', error: false});
     }, 3000);
+  };
+
+  const showDeleteAlert = (alert: CustomAlertProps) => {
+    setAlert(alert);
+    setTimeout(() => {
+      setAlert({message: '', error: false});
+      navigate('/projects');
+    }, 2000);
   };
 
   useEffect(() => {
@@ -148,9 +158,9 @@ export const ProjectsProvider: React.FC = ({children}) => {
       };
       const {data} = await axiosClient.delete(`/projects/${id}`, config);
       setProjects(projects.filter(p => p._id !== id));
-      showAlert({
+      showDeleteAlert({
         message: data.msg,
-        error: false,
+        error: true,
       });
     } catch (error) {
       showAlert({
