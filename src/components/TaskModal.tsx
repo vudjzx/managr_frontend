@@ -139,7 +139,7 @@ const TaskModal = () => {
                           id="description"
                           name="description"
                           className="w-full mt-3 p-3 border rounded-xl bg-gray-50 focus:outline-none focus:shadow"
-                          placeholder="Project description"
+                          placeholder="Task description"
                           value={formData.description}
                           onChange={(e: any) =>
                             setFormData({...formData, description: e.target.value})

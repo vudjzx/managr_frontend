@@ -67,7 +67,7 @@ const AddCollaborator = () => {
           </div>
         ) : (
           <div className="w-full flex mt-10 justify-center">
-            <div className="bg-white py-10 px-5 md:w-1/2 rounded-lg shadow">
+            <div className="w-3/4 bg-white py-10 px-5 md:w-1/2 rounded-lg shadow">
               <h2 className="text-center mb-10 text-2xl font-bold">Results</h2>
               <CollaboratorComponent
                 collaborator={collaborator}
